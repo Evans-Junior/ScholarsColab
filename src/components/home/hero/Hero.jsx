@@ -1,26 +1,42 @@
 import React from "react"
 import Heading from "../../common/heading/Heading"
 import "./Hero.css"
+import {motion} from "framer-motion"
+
 
 const Hero = () => {
   return (
     <>
-      <section className="hero" >
+      <motion.section className="hero" 
+        initial={{opacity: 0}}
+        animate={{opacity: 1}}
+        transition={{duration: 1, delay: 0.5}}
+      >
         <div className='container'>
           <div className='row'>
-            <Heading subtitle='WELCOME TO myScholarsHUB' title='Best Online Education Expertise' />
+            <motion.div>
+            <Heading subtitle="Welcome To myScholarsHUB" title='Best Online Education Expertise' />
+            </motion.div>
             <p>Grab an opportunity to start your education at your dream school whiles on Scholarship.</p>
             <div className='button'>
-              <button className='primary-btn'>
+              <motion.button className='primary-btn'
+                initial={{scale: 0}}
+                animate={{scale: 1}}
+                transition={{duration: 1, delay: 0.5}}
+              >
                 GET STARTED NOW <i className='fa fa-long-arrow-alt-right'></i>
-              </button>
-              <button>
+              </motion.button>
+              <motion.button
+                initial={{x: 300}}
+                animate={{x: 0}}
+                transition={{duration: 1, ease: "easeInOut",delay: 0.5}}
+              >
                 Explore <i className='fa fa-long-arrow-alt-right'></i>
-              </button>
+              </motion.button>
             </div>
           </div>
         </div>
-      </section>
+      </motion.section>
       <div className='margin'></div>
     </>
   )
